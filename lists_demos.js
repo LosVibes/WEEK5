@@ -14,7 +14,10 @@ let people = [
     }
 ];
 //Add one more 
-people.push    ({name:"Miguel", age:19});
+people.push({name:"Miguel", age:19});
+
+people[1].name = "Megatron";///Update the last person
+people[0].name = "Los";//update the first person
 
 //for(START, STOP, HOW)
 for(let index = 0; index < people.length; index++){
