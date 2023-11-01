@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM vs String</title>
+</head>
+<body>
+    <select>
+        <option value="">Select a State</option>
+        <option value="TX">Texas</option>
+        <option value="OR">Oregon</option>
+    </select>
+
+    <select id="target1">
+        <option value="">Select a State</option>
+    </select>
+    
+    <select id="target2">
+        <option value="">Select a State</option>
+    </select>
+</body>
+<script>
+    //DOMJavascript and browser only als safest
+    function option(value, displayText){
+        const o = document.createElement("option");
+        o.innerText = displayText;
+        o.value = value;
+        return o;
+    }
+    target1.appendChild(option("TX", "Texas"));
+    target1.appendChild(option("OR", "Oregon"));
+
+    //Client or Server
+    function optionString(value, displayText){
+        return `<option value="${value}">${displayText}</option>`;
+    }
+    target2.innerHTML = optionString("TX", "Texas") + 
+                        optionString("OR", "Oregon");
+
+
+</script>
+</html>
