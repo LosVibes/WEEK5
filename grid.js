@@ -34,10 +34,11 @@ const grid = [
     ['.','.','.'], 
     ['.','O','X'], 
 ];
+
 grid[1][1] = "X"
-for(let r = 0; r < 3; r++) {
+for(let r = 0; r < grid.length; r++) {
     let row = "";
-    for(let c = 0; c < 3; c++) {
+    for(let c = 0; c < grid[r].length; c++) {
         row += ' ' + grid[r][c];
     }
     console.log("R"+r + row)
